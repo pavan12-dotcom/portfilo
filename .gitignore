@@ -1,0 +1,6 @@
+# Diagnostic and Scratch files
+scratch/
+
+# Diagnostic assets
+assets/inspect/
+assets/media__*

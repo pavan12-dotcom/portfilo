@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Thotakura Pavan | Portfolio</title>
-  <meta name="description" content="Portfolio of Thotakura Pavan — ECE student passionate about full-stack development, data science, and real-time systems." />
-  <meta name="author" content="Thotakura Pavan" />
-  <meta name="keywords" content="Thotakura Pavan, ECE, Full Stack Developer, Data Science, React, Python, OpenCV, Power BI" />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="description" content="Portfolio of Thotakura Pavan — ECE student passionate about full-stack development, data science, and real-time computer vision systems."/>
+  <meta name="author" content="Thotakura Pavan"/>
+  <meta name="keywords" content="Thotakura Pavan,ECE,Full Stack Developer,Data Science,React,Python,OpenCV,Power BI"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
 
-<!-- ───────────────── LOADER ───────────────── -->
-<div id="loader">
-  <div class="loader-initials" id="loaderInitials">TP<span>.</span></div>
-  <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
-</div>
+
 
 <!-- SCROLL PROGRESS -->
 <div id="scroll-progress"></div>
 
-<!-- CURSOR GLOW -->
-<div class="cursor-glow" id="cursorGlow"></div>
+<!-- CURSOR -->
+<div class="cursor-glow-dot hidden md:block" id="cursorDot"></div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose"><i class="fa fa-times"></i></button>
-  <img src="" alt="Preview" id="lightboxImg" />
-</div>
-
-<!-- ───────────────── NAV ───────────────── -->
+<!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="nav-logo" href="#hero">TP<span>.</span></a>
+    <a class="nav-logo" href="#hero">
+      <div class="logo-box">{TP}</div>
+    </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#certifications">Certs</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -51,92 +42,114 @@
   </div>
 </nav>
 
-<!-- ───────────────── HERO ───────────────── -->
+<!-- ══════════════ HERO ══════════════ -->
 <section id="hero">
   <div class="dot-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-content">
-    <div class="hero-badge" id="heroBadge">
-      <span class="pulse-dot"></span>
-      Open to Opportunities
-    </div>
-    <h1 class="hero-name" id="heroName">
-      THOTAKURA <span class="hero-name-accent">PAVAN</span>
-    </h1>
-    <div class="hero-typed-wrap" id="heroTyped">
-      <span id="typedText"></span><span class="typed-cursor">|</span>
-    </div>
-    <p class="hero-sub" id="heroSub">
-      Electronics & Communication Engineering student passionate about full-stack development,
-      data science, analytics dashboards, and real-time computer vision systems.
-    </p>
-    <div class="hero-actions" id="heroActions">
-      <a class="btn-primary" href="#projects">
-        View Projects <i class="fa fa-arrow-right"></i>
-      </a>
-      <a class="btn-outline" href="#contact">Contact Me</a>
-      <a class="btn-outline" href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener">Resume</a>
-    </div>
-    <div class="hero-socials" id="heroSocials">
-      <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="social-link" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:pavathotakura167@gmail.com" class="social-link" title="Email">
-        <i class="fa fa-envelope"></i>
-      </a>
-      <a href="tel:+917730959659" class="social-link" title="Phone">
-        <i class="fa fa-phone"></i>
-      </a>
-    </div>
-    <div class="hero-metrics" id="heroMetrics">
-      <div class="hero-metric">
-        <div class="hero-metric-value">8.0</div>
-        <div class="hero-metric-label">CGPA</div>
+  <div class="hero-grid">
+    <!-- Left Column: Info -->
+    <div class="hero-info-col">
+      <div class="tech-badge" id="heroBadge">
+        <span class="badge-dot"></span>
+        Systems Active // CGPA: 8.0
       </div>
-      <div class="hero-metric">
-        <div class="hero-metric-value">2+</div>
-        <div class="hero-metric-label">Projects</div>
+
+      <h1 class="hero-name" id="heroName">
+        Thotakura <span class="hero-name-accent">Pavan</span>
+      </h1>
+
+      <div class="prompt-tagline" id="heroSubPrompt">
+        &gt; Full-Stack with Data Analytics
       </div>
-      <div class="hero-metric">
-        <div class="hero-metric-value">5</div>
-        <div class="hero-metric-label">Certifications</div>
+
+      <p class="hero-desc" id="heroSub">
+        Electronics &amp; Communication Engineering student passionate about
+        full-stack development, data science, analytics dashboards, and
+        real-time computer vision systems.
+      </p>
+
+      <div class="hero-actions" id="heroActions">
+        <a class="btn-accent" href="#projects">
+          Explore Projects <i class="fa fa-arrow-right"></i>
+        </a>
+        <a class="btn-outline-grey" href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener">
+          GitHub Node
+        </a>
       </div>
-      <div class="hero-metric">
-        <div class="hero-metric-value">1</div>
-        <div class="hero-metric-label">Internship</div>
+
+      <div class="hero-social-list" id="heroSocials">
+        <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="social-card" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="social-card" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:pavathotakura167@gmail.com" class="social-card" title="Email">
+          <i class="fa fa-envelope"></i>
+        </a>
+        <a href="tel:+917730959659" class="social-card" title="Phone">
+          <i class="fa fa-phone"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Terminal Widget -->
+    <div class="hero-terminal-col" id="heroTerminal">
+      <div class="console-window">
+        <div class="console-header">
+          <div class="window-dots">
+            <span class="window-dot red"></span>
+            <span class="window-dot yellow"></span>
+            <span class="window-dot green"></span>
+          </div>
+          <div class="console-title">V.SYSTEMS_CONSOLE_CORE_V2</div>
+        </div>
+        <div class="console-tabs">
+          <button class="console-tab active" data-tab="profile">PROFILE.JSON</button>
+          <button class="console-tab" data-tab="skills">SKILLS.YAML</button>
+          <button class="console-tab" data-tab="telemetry">TELEMETRY.CONF</button>
+        </div>
+        <div class="console-body">
+          <pre><code id="consoleCode"></code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Width Bottom: Metrics Divider Row -->
+    <div class="hero-metrics-row" id="heroMetrics">
+      <div class="hero-metric-item">
+        <div class="hero-metric-num">8.0</div>
+        <div class="hero-metric-lbl">CGPA ACCREDITED</div>
+      </div>
+      <div class="hero-metric-item">
+        <div class="hero-metric-num">2+</div>
+        <div class="hero-metric-lbl">CORE PROJECTS</div>
+      </div>
+      <div class="hero-metric-item">
+        <div class="hero-metric-num">17</div>
+        <div class="hero-metric-lbl">VERIFIED CERTS</div>
+      </div>
+      <div class="hero-metric-item">
+        <div class="hero-metric-num">2</div>
+        <div class="hero-metric-lbl">INDUSTRY INTERNS</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ───────────────── ABOUT ───────────────── -->
+
+<!-- ══════════════ ABOUT ══════════════ -->
 <section id="about">
   <div class="container">
     <div class="about-layout">
+
       <div class="reveal">
         <div class="section-eyebrow">Profile</div>
         <h2 class="section-title">Engineering Mindset</h2>
         <div class="section-divider"></div>
         <div class="about-text">
-          <p>
-            I'm a <strong>Electronics & Communication Engineering student</strong> at
-            Narasaraopeta Engineering College, maintaining a CGPA of <strong>8.0</strong>.
-            I specialize in building full-stack web applications, real-time analytics dashboards,
-            and computer vision systems that solve real-world problems.
-          </p>
-          <p>
-            From crafting interactive React frontends to building Python-powered
-            computer vision pipelines — I love bridging the gap between hardware
-            fundamentals and modern software engineering.
-          </p>
-          <p>
-            My internship at <strong>Infosys Springboard</strong> gave me hands-on
-            experience in data analytics and Power BI visualization, building the
-            <strong>AirFly Insights</strong> airline operations analytics platform.
-          </p>
+          <p>I'm an <strong>Electronics &amp; Communication Engineering student</strong> at Narasaraopeta Engineering College, maintaining a CGPA of <strong>8.0</strong>. I specialize in full-stack web applications, real-time analytics dashboards, and computer vision systems.</p>
+          <p>From crafting interactive <strong>React frontends</strong> and <strong>Node.js backends</strong> to building Python-powered computer vision pipelines — I love bridging the gap between hardware fundamentals and modern software.</p>
+          <p>My internship at <strong>Infosys Springboard</strong> gave me hands-on experience in data analytics and Power BI, building the <strong>AirFly Insights</strong> airline operations platform covering 5.82M flights.</p>
         </div>
         <div class="about-stat-row">
           <div class="about-stat">
@@ -144,8 +157,8 @@
             <div class="about-stat-label">CGPA</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat-number">5</div>
-            <div class="about-stat-label">Certifications</div>
+            <div class="about-stat-number">17</div>
+            <div class="about-stat-label">Certs</div>
           </div>
           <div class="about-stat">
             <div class="about-stat-number">2<span>+</span></div>
@@ -156,31 +169,32 @@
 
       <div class="about-cards reveal">
         <div class="about-card">
-          <div class="about-card-icon">⚡</div>
+          <div class="about-card-icon"><i class="fa fa-code"></i></div>
           <div class="about-card-title">Full Stack Dev</div>
-          <div class="about-card-desc">Building robust interfaces with React.js and server APIs with Node.js for real-time applications.</div>
+          <div class="about-card-desc">Building robust interfaces with React.js and scalable APIs with Node.js for real-time applications.</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">📊</div>
+          <div class="about-card-icon"><i class="fa fa-chart-bar"></i></div>
           <div class="about-card-title">Data Science</div>
-          <div class="about-card-desc">Creating analytics dashboards, data visualization, and insights using Power BI and Python.</div>
+          <div class="about-card-desc">Creating analytics dashboards and visualizations using Power BI, Python, and data modelling techniques.</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">👁️</div>
+          <div class="about-card-icon"><i class="fa fa-eye"></i></div>
           <div class="about-card-title">Computer Vision</div>
-          <div class="about-card-desc">Real-time motion tracking and object detection systems using Python and OpenCV.</div>
+          <div class="about-card-desc">Real-time motion tracking and object detection systems using Python and OpenCV at live camera speeds.</div>
         </div>
         <div class="about-card">
-          <div class="about-card-icon">🧩</div>
+          <div class="about-card-icon"><i class="fa fa-puzzle-piece"></i></div>
           <div class="about-card-title">Problem Solving</div>
-          <div class="about-card-desc">Applying OOP, API integration, and debugging expertise to build production-ready solutions.</div>
+          <div class="about-card-desc">Applying OOP, API integration, and debugging skills to build production-ready software solutions.</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ───────────────── SKILLS ───────────────── -->
+<!-- ══════════════ SKILLS ══════════════ -->
 <section id="skills">
   <div class="container">
     <div class="reveal section-header">
@@ -189,24 +203,187 @@
       <div class="section-divider"></div>
       <p class="section-sub">A curated stack of languages, frameworks, and tools used to build real-world applications.</p>
     </div>
-    <div class="skills-grid" id="skillsGrid">
-      <div class="skill-card"><div class="skill-icon" style="color:#a8b4c0">🇨</div><span class="skill-name">C</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#6d9eeb">🔷</div><span class="skill-name">C++</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#3776ab"><i class="fab fa-python" style="font-size:2rem"></i></div><span class="skill-name">Python</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#f7df1e"><i class="fab fa-js" style="font-size:2rem"></i></div><span class="skill-name">JavaScript</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#61dafb"><i class="fab fa-react" style="font-size:2rem"></i></div><span class="skill-name">React.js</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#339933"><i class="fab fa-node-js" style="font-size:2rem"></i></div><span class="skill-name">Node.js</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#e34f26"><i class="fab fa-html5" style="font-size:2rem"></i></div><span class="skill-name">HTML5</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#264de4"><i class="fab fa-css3-alt" style="font-size:2rem"></i></div><span class="skill-name">CSS3</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#f05032"><i class="fab fa-git-alt" style="font-size:2rem"></i></div><span class="skill-name">Git</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#181717"><i class="fab fa-github" style="font-size:2rem"></i></div><span class="skill-name">GitHub</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#48a3c8">👁</div><span class="skill-name">OpenCV</span></div>
-      <div class="skill-card"><div class="skill-icon" style="color:#f2c811">📊</div><span class="skill-name">Power BI</span></div>
+    <div id="skillsGrid" class="skills-container-layout">
+      
+      <!-- Sub-section 1: Full Stack Development -->
+      <div class="skills-subsection">
+        <h3 class="skills-subsection-title"><i class="fa fa-laptop-code"></i> Full Stack Development</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#61dafb"><i class="fab fa-react" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">React.js</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#339933"><i class="fab fa-node-js" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">Node.js</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#f7df1e"><i class="fab fa-js" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#e34f26"><i class="fab fa-html5" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">HTML5</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#264de4"><i class="fab fa-css3-alt" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">CSS3</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#f05032"><i class="fab fa-git-alt" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">Git</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-github" style="font-size:1.6rem;color:#24292e"></i></div>
+            <span class="skill-name">GitHub</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#0ea5e9"><i class="fa fa-network-wired" style="font-size:1.5rem"></i></div>
+            <span class="skill-name">REST APIs</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#00599c">🔷</div>
+            <span class="skill-name">C++</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#a8b9cc">🇨</div>
+            <span class="skill-name">C</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-section 2: Data Analytics -->
+      <div class="skills-subsection">
+        <h3 class="skills-subsection-title"><i class="fa fa-chart-pie"></i> Data Analytics</h3>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#f2c811">📊</div>
+            <span class="skill-name">Power BI</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#1f578c">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" style="display:inline-block; vertical-align:middle;">
+                <path d="M11 0h2v7.5h7.5v2H13V17h7.5v2H13V24h-2v-5H3.5v-2H11V9.5H3.5v-2H11zm-5.5 9v1.5H9V12H5.5v3.5H4V12H.5v-1.5H4V7h1.5zm11 0v1.5H20V12h-3.5v3.5h-1.5V12h-3.5v-1.5h3.5V7h1.5zm-5.5-5.5v1.5h1.5V6H13V9.5h-1.5V6H10V4.5h1.5V1h1.5zm0 15.5v1.5h1.5v1.5h-1.5V23h-1.5v-1.5H10v-1.5h1.5v-1.5h1.5z"/>
+              </svg>
+            </div>
+            <span class="skill-name">Tableau</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#107c41"><i class="fa fa-file-excel" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">MS Excel</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#3776ab"><i class="fab fa-python" style="font-size:1.6rem"></i></div>
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#f37626">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" style="display:inline-block; vertical-align:middle;">
+                <path d="M14.675 0a3.178 3.178 0 0 0-.256.01 3.2 3.2 0 0 0-2.923 2.923c-.15 1.096.386 2.183 1.341 2.7a14.773 14.773 0 0 0-9.873 9.873 3.2 3.2 0 1 0 2.224 2.225 14.757 14.757 0 0 0 9.873-9.873c.517.955 1.604 1.492 2.7 1.342a3.2 3.2 0 1 0-3.086-9.2zm-5.35 5.35a14.757 14.757 0 0 0-9.873 9.873 3.2 3.2 0 1 0 2.225 2.224 14.773 14.773 0 0 0 9.873-9.873c.517.955 1.604 1.492 2.7 1.342a3.2 3.2 0 1 0-4.925-3.566z"/>
+              </svg>
+            </div>
+            <span class="skill-name">Jupyter</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#38bdf8">👁</div>
+            <span class="skill-name">OpenCV</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#6366f1"><i class="fa fa-database" style="font-size:1.5rem"></i></div>
+            <span class="skill-name">Data Modeling</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#ec4899"><i class="fa fa-project-diagram" style="font-size:1.5rem"></i></div>
+            <span class="skill-name">ER Modeling</span>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon" style="color:#f59e0b"><i class="fa fa-server" style="font-size:1.5rem"></i></div>
+            <span class="skill-name">SQL</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ───────────────── PROJECTS ───────────────── -->
+<!-- ══════════════ EXPERIENCE ══════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Trajectory</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="exp-timeline reveal">
+      <!-- Datavalley (Latest) -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <div class="exp-company">Datavalley India Pvt. Ltd.</div>
+              <div class="exp-role">Online Intern — Internet of Things (IOT)</div>
+              <span class="exp-featured-badge">Latest</span>
+            </div>
+            <span class="exp-date">May 2026</span>
+          </div>
+          <p class="exp-desc">
+            <strong>Gained</strong> practical exposure to IoT architectures, hardware interfacing, and real-time sensor integration.
+            <strong>Analyzed</strong> device connectivity workflows and protocol structures for telemetry streaming.
+            <strong>Developed</strong> mock prototype IoT solutions to solidify embedded systems concepts.
+          </p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">IoT</span>
+            <span class="exp-highlight">Embedded Systems</span>
+            <span class="exp-highlight">Device Connectivity</span>
+            <span class="exp-highlight">Datavalley</span>
+            <span class="exp-highlight">Online Internship</span>
+          </div>
+          <div class="exp-reg-row">
+            <i class="fa fa-id-badge"></i>
+            Reg. No: <strong>AP26S11112601</strong> &nbsp;·&nbsp; CIN: U63999TS2023PTC172622
+          </div>
+        </div>
+      </div>
+
+      <!-- Infosys Springboard -->
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-card-top">
+            <div>
+              <div class="exp-company">Infosys Springboard</div>
+              <div class="exp-role">Virtual Intern — Data Analytics</div>
+              <span class="exp-featured-badge">Featured</span>
+            </div>
+            <span class="exp-date">Feb 2026</span>
+          </div>
+          <p class="exp-desc">
+            <strong>Developed</strong> the <strong>AirFly Insights</strong> interactive Power BI analytics dashboard tracking a massive dataset of 5.82M flights.
+            <strong>Designed</strong> high-impact operational dashboard visuals for delay diagnostics, airport traffic mapping, and monthly performance tracking.
+            <strong>Analyzed</strong> complex travel metrics to pinpoint cancellation distribution profiles (Carrier: 54.35%, Weather: 28.11%, NAS: 17.52%).
+          </p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Power BI</span>
+            <span class="exp-highlight">Data Analytics</span>
+            <span class="exp-highlight">Dashboard Design</span>
+            <span class="exp-highlight">5.82M Flights Dataset</span>
+            <span class="exp-highlight">Airline Operations</span>
+          </div>
+          <div class="exp-img-preview" onclick="openLightbox('assets/airfly-dashboard.png')">
+            <img src="assets/airfly-dashboard.png" alt="AirFly Insights Power BI Dashboard"
+              onerror="this.parentElement.style.display='none'"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ PROJECTS ══════════════ -->
 <section id="projects">
   <div class="container">
     <div class="reveal section-header">
@@ -217,34 +394,35 @@
 
     <div class="projects-stack">
 
-      <!-- PROJECT 1 -->
+      <!-- Project 1 -->
       <div class="project-item reveal">
-        <div>
-          <div class="project-number">01</div>
-          <div class="project-tags" style="margin-top:.5rem">
-            <span class="project-tag">React.js</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">REST APIs</span>
-            <span class="project-tag">Live Data</span>
-          </div>
+        <div class="project-number">01</div>
+        <div class="project-tags">
+          <span class="project-tag">React.js</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">REST APIs</span>
+          <span class="project-tag">Live Data</span>
+          <span class="project-tag">Monte Carlo</span>
         </div>
-        <div>
-          <h3 class="project-title">Stock Market Analytics Dashboard</h3>
-          <p class="project-desc">
-            A full-featured Stock Analytics Terminal (v3.0) tracking 19 US Equities with
-            SPY Benchmark. Features Overview, Risk Analytics, Portfolio Optimization, and
-            Monte Carlo simulation tabs. Includes MA50/MA200 overlays, Sharpe ratio, VaR,
-            Max Drawdown, CAGR metrics, and real-time portfolio allocation with strategy comparison.
-          </p>
-          <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-1.png')">
-            <img src="assets/stock-dashboard-1.png" alt="Stock Analytics Terminal - Portfolio View"
-              onerror="this.parentElement.style.display='none'" />
-          </div>
-          <div class="project-preview" style="margin-top:.75rem" onclick="openLightbox('assets/stock-dashboard-2.png')">
-            <img src="assets/stock-dashboard-2.png" alt="Stock Analytics Terminal - Overview"
-              onerror="this.parentElement.style.display='none'" />
-          </div>
+        <h3 class="project-title">Stock Market Analytics Dashboard</h3>
+        <div class="project-highlight-callout">
+          <strong>Developed</strong> and <strong>analyzed</strong> using Data Analytics, and <strong>designed</strong> with Full-Stack implementation for enhanced interactive visualization.
+        </div>
+        <p class="project-desc">
+          <strong>Developed</strong> a full-featured Stock Analytics Terminal (v3.0) tracking 10 US Equities with SPY Benchmark using Chart.js and client-side financial math.
+          <strong>Designed</strong> an interactive multi-tab dashboard — Overview, Risk Analytics, Portfolio Optimization, and Monte Carlo Simulation — with a sleek dark-mode terminal UI.
+          <strong>Implemented</strong> MA50/MA200 moving average overlays, 30-day Rolling Sharpe, Drawdown timelines, VaR/CVaR metrics, and a Correlation Matrix heatmap.
+          <strong>Executed</strong> a 200-path Monte Carlo simulation using Geometric Brownian Motion to forecast 30-day price distributions with CAGR of +21.1% and Max Drawdown of -21.3%.
+          <strong>Integrated</strong> Alpha Vantage live API with cached local fallback, enabling real-time portfolio weight allocation via interactive sliders (Max Sharpe strategy: +27.4%).
+        </p>
+        <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-1.png')">
+          <img src="assets/stock-dashboard-1.png" alt="Stock Analytics Terminal - Portfolio View"
+            onerror="this.parentElement.style.display='none'"/>
+        </div>
+        <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-2.png')">
+          <img src="assets/stock-dashboard-2.png" alt="Stock Analytics Terminal - Overview"
+            onerror="this.parentElement.style.display='none'"/>
         </div>
         <div class="project-actions">
           <a href="https://pavan12-dotcom.github.io/Stock-market-analytics-project/Stock_Live_Dashboard.html"
@@ -257,26 +435,22 @@
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
+      <!-- Project 2 -->
       <div class="project-item reveal">
-        <div>
-          <div class="project-number">02</div>
-          <div class="project-tags" style="margin-top:.5rem">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">OpenCV</span>
-            <span class="project-tag">Computer Vision</span>
-            <span class="project-tag">Real-Time</span>
-          </div>
+        <div class="project-number">02</div>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">OpenCV</span>
+          <span class="project-tag">Computer Vision</span>
+          <span class="project-tag">Real-Time</span>
+          <span class="project-tag">Object Detection</span>
         </div>
-        <div>
-          <h3 class="project-title">Real-Time Motion Tracking & Object Detection</h3>
-          <p class="project-desc">
-            Built a real-time motion tracking and object detection system using Python and OpenCV.
-            Features include background subtraction, contour-based motion analysis, bounding box
-            detection, live camera feed processing, and frame-by-frame object tracking — all
-            running at real-time speeds.
-          </p>
-        </div>
+        <h3 class="project-title">Real-Time Motion Tracking &amp; Object Detection</h3>
+        <p class="project-desc">
+          <strong>Developed</strong> a real-time motion tracking and object detection system using Python and OpenCV, achieving live-feed processing speeds.
+          <strong>Designed</strong> and <strong>implemented</strong> a background subtraction pipeline with contour-based motion analysis and dynamic bounding box detection for precise object localization.
+          <strong>Executed</strong> frame-by-frame object tracking on live camera feeds, enabling accurate multi-object monitoring in real-time computer vision workflows.
+        </p>
         <div class="project-actions">
           <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="proj-btn-primary">
             <i class="fab fa-github"></i> GitHub
@@ -288,53 +462,7 @@
   </div>
 </section>
 
-<!-- ───────────────── EXPERIENCE ───────────────── -->
-<section id="experience">
-  <div class="container">
-    <div class="reveal section-header">
-      <div class="section-eyebrow">Trajectory</div>
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="section-divider"></div>
-    </div>
-
-    <div class="exp-timeline reveal">
-
-      <div class="exp-item">
-        <div class="exp-dot"></div>
-        <div class="glass-card">
-          <div class="exp-card-top">
-            <div>
-              <div class="exp-company">Infosys Springboard</div>
-              <div class="exp-role">Virtual Intern — Data Analytics</div>
-              <span class="exp-badge">✓ Certified</span>
-            </div>
-            <span class="exp-date">Feb 2026</span>
-          </div>
-          <p class="exp-desc">
-            Worked on <strong style="color:var(--text)">AirFly Insights: Data Visualization and Analysis of Airline Operations</strong> —
-            an interactive Power BI analytics platform covering 5.82M flights. Built dashboards for
-            departure delay analysis by airline, monthly traffic trends, cancellation reason breakdown,
-            and route-to-destination airport visualization.
-          </p>
-          <div class="exp-highlights">
-            <span class="exp-highlight">Power BI</span>
-            <span class="exp-highlight">Data Analytics</span>
-            <span class="exp-highlight">Dashboard Design</span>
-            <span class="exp-highlight">5.82M Flights Dataset</span>
-            <span class="exp-highlight">Airline Operations</span>
-          </div>
-          <div class="exp-img-preview" onclick="openLightbox('assets/airfly-dashboard.png')">
-            <img src="assets/airfly-dashboard.png" alt="AirFly Insights Dashboard"
-              onerror="this.parentElement.style.display='none'" />
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ───────────────── CERTIFICATIONS ───────────────── -->
+<!-- ══════════════ CERTIFICATIONS ══════════════ -->
 <section id="certifications">
   <div class="container">
     <div class="reveal section-header">
@@ -343,56 +471,337 @@
       <div class="section-divider"></div>
     </div>
 
-    <div class="certs-grid">
+    <div class="cert-grid">
 
-      <div class="cert-card reveal">
-        <div class="cert-icon">🏛️</div>
-        <div>
-          <div class="cert-title">Industry 4.0 and IIoT</div>
-          <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
-          <div class="cert-date">Verified Certificate</div>
-        </div>
-      </div>
-
-      <div class="cert-card reveal" style="flex-direction:column;align-items:stretch">
-        <div style="display:flex;gap:1rem;align-items:flex-start">
-          <div class="cert-icon">📊</div>
+      <!-- NPTEL Elite - Industry 4.0 & Industrial IoT (2026) -->
+      <div class="cert-card featured reveal" onclick="openCertView('nptel')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
           <div>
-            <div class="cert-title">TechA Data Analytics using Power BI Foundation</div>
-            <div class="cert-issuer">Infosys Springboard</div>
-            <div class="cert-date">December 17, 2025</div>
+            <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
+            <div class="cert-elite-badge"><i class="fa fa-award"></i> ELITE</div>
+          </div>
+          <div class="cert-score-ring">
+            <span class="cert-score-num">80%</span>
           </div>
         </div>
-        <div class="cert-img-wrap" style="margin-top:1rem" onclick="openLightbox('assets/infosys-cert.png')">
-          <img src="assets/infosys-cert.png" alt="Infosys Springboard Certificate"
-            onerror="this.parentElement.style.display='none'" />
+        <div class="cert-name">Introduction to Industry 4.0 and Industrial Internet of Things</div>
+        <div class="cert-sub">Jan – Apr 2026 &nbsp;·&nbsp; 12-week course &nbsp;·&nbsp; IIT Kharagpur</div>
+        <div class="cert-score-row">
+          <div class="cert-score-item">
+            <span class="cert-score-label">Online Assignments</span>
+            <span class="cert-score-val">23.1 / 25</span>
+          </div>
+          <div class="cert-score-item">
+            <span class="cert-score-label">Proctored Exam</span>
+            <span class="cert-score-val">57 / 75</span>
+          </div>
+        </div>
+        <div class="cert-roll">Roll No: NPTEL26CS38S1551300016</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Elite · Verified</span>
+          <span class="cert-issuer-tag">Skill India · SWAYAM</span>
         </div>
       </div>
 
-      <div class="cert-card reveal">
-        <div class="cert-icon">🐍</div>
-        <div>
-          <div class="cert-title">Big Data using Python</div>
-          <div class="cert-issuer">Certification</div>
-          <div class="cert-date">Verified Certificate</div>
+      <!-- NPTEL Elite - Internet of Things (2025) -->
+      <div class="cert-card featured reveal" onclick="openCertView('nptel_iot')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
+            <div class="cert-elite-badge"><i class="fa fa-award"></i> ELITE</div>
+          </div>
+          <div class="cert-score-ring" style="background:conic-gradient(var(--accent) 230deg, #0000001a 0deg)">
+            <span class="cert-score-num">64%</span>
+          </div>
+        </div>
+        <div class="cert-name">Introduction To Internet Of Things</div>
+        <div class="cert-sub">Jan – Apr 2025 &nbsp;·&nbsp; 12-week course &nbsp;·&nbsp; IIT Kharagpur</div>
+        <div class="cert-score-row">
+          <div class="cert-score-item">
+            <span class="cert-score-label">Online Assignments</span>
+            <span class="cert-score-val">15.63 / 25</span>
+          </div>
+          <div class="cert-score-item">
+            <span class="cert-score-label">Proctored Exam</span>
+            <span class="cert-score-val">48 / 75</span>
+          </div>
+        </div>
+        <div class="cert-roll">Roll No: NPTEL25CS44S453300512</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Elite · Verified</span>
+          <span class="cert-issuer-tag">Skill India · SWAYAM</span>
         </div>
       </div>
 
-      <div class="cert-card reveal">
-        <div class="cert-icon">🗄️</div>
-        <div>
-          <div class="cert-title">Multidimensional Data Modelling</div>
-          <div class="cert-issuer">Certification</div>
-          <div class="cert-date">Verified Certificate</div>
+      <!-- UNICEF - Digital Productivity with AI -->
+      <div class="cert-card reveal" onclick="openCertView('unicef_ai')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">UNICEF · YuWaah!</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#0099da,#00bfa5);color:#fff;">100% Score</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Digital Productivity with AI</div>
+        <div class="cert-sub">February 21, 2026 &nbsp;·&nbsp; Passport to Earning Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · UNICEF</span>
+          <span class="cert-issuer-tag">AI · Productivity</span>
         </div>
       </div>
 
-      <div class="cert-card reveal">
-        <div class="cert-icon">🤖</div>
-        <div>
-          <div class="cert-title">Data Science</div>
-          <div class="cert-issuer">Certification</div>
-          <div class="cert-date">Verified Certificate</div>
+      <!-- Cloud Technologies (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('cloudtech')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Cloud</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Cloud Technologies</div>
+        <div class="cert-sub">March 23, 2026 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- TechA Power BI (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('infosys')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Power BI</div>
+          </div>
+
+        </div>
+        <div class="cert-name">TechA Data Analytics using Power BI Foundation Certification</div>
+        <div class="cert-sub">December 17, 2025 &nbsp;·&nbsp; Foundation Certification</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Power BI for Business Professionals (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('powerbi_prof')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Power BI</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Power BI for Business Professionals</div>
+        <div class="cert-sub">December 16, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Multidimensional Data Modelling (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('datamodel')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Data Modeling</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Multidimensional Data Modelling</div>
+        <div class="cert-sub">December 12, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Excel (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('excel')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Excel</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Excel</div>
+        <div class="cert-sub">December 11, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Grad Guru - Career Guidance Session -->
+      <div class="cert-card reveal" onclick="openCertView('gradguru')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Grad Guru · IIT Hyderabad</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#f1c40f,#f39c12);color:#1a1a00;">E-Cell</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Career Guidance Session</div>
+        <div class="cert-sub">August 10, 2025 &nbsp;·&nbsp; Certificate of Participation</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">E-Cell IIT Hyderabad</span>
+          <span class="cert-issuer-tag">IIT Hyderabad · E-Cell</span>
+        </div>
+      </div>
+
+      <!-- Learning Microsoft Power BI (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('learn_powerbi')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Power BI</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Learning Microsoft Power BI</div>
+        <div class="cert-sub">December 15, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Introduction to Business Intelligence (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('intro_bi')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">BI</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Introduction to Business Intelligence</div>
+        <div class="cert-sub">December 12, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Introduction to Entity Relationship ER Modeling (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('er_modeling')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">ER Modeling</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Introduction to Entity Relationship ER Modeling</div>
+        <div class="cert-sub">December 12, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Programming using Java (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('java_prog')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag">Java</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Programming using Java</div>
+        <div class="cert-sub">December 11, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- OpenAI GPT-3 for Developers (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('gpt3_dev')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#10b981,#059669);color:#fff;">GPT-3</div>
+          </div>
+
+        </div>
+        <div class="cert-name">OpenAI GPT-3 for Developers</div>
+        <div class="cert-sub">December 11, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Verified</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Data Science (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('data_science')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#6366f1,#4f46e5);color:#fff;">Data Science</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Data Science</div>
+        <div class="cert-sub">December 17, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed &middot; Verified</span>
+          <span class="cert-issuer-tag">Infosys &middot; Springboard</span>
+        </div>
+      </div>
+
+      <!-- Object Oriented Programming using Python (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('oop_python')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#3776ab,#1d4ed8);color:#fff;">OOP Python</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Object Oriented Programming using Python</div>
+        <div class="cert-sub">December 11, 2025 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed &middot; Verified</span>
+          <span class="cert-issuer-tag">Infosys &middot; Springboard</span>
+        </div>
+      </div>
+
+      <!-- Big Data (Infosys Springboard) -->
+      <div class="cert-card reveal" onclick="openCertView('big_data')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;">Big Data</div>
+          </div>
+
+        </div>
+        <div class="cert-name">Big Data</div>
+        <div class="cert-sub">March 23, 2026 &nbsp;·&nbsp; Course Completion Certificate</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed &middot; Verified</span>
+          <span class="cert-issuer-tag">Infosys &middot; Springboard</span>
         </div>
       </div>
 
@@ -400,7 +809,7 @@
   </div>
 </section>
 
-<!-- ───────────────── EDUCATION ───────────────── -->
+<!-- ══════════════ EDUCATION ══════════════ -->
 <section id="education">
   <div class="container">
     <div class="reveal section-header">
@@ -408,10 +817,9 @@
       <h2 class="section-title">Education</h2>
       <div class="section-divider"></div>
     </div>
-
     <div class="edu-card reveal">
       <div>
-        <div class="edu-degree">Bachelor of Technology</div>
+        <div class="edu-degree">Bachelor of Technology (B.Tech)</div>
         <div class="edu-field">Electronics and Communication Engineering</div>
         <div class="edu-college">Narasaraopeta Engineering College</div>
         <div class="edu-year">2023 — 2027</div>
@@ -424,7 +832,7 @@
   </div>
 </section>
 
-<!-- ───────────────── CONTACT ───────────────── -->
+<!-- ══════════════ CONTACT ══════════════ -->
 <section id="contact">
   <div class="container">
     <div class="reveal section-header">
@@ -434,81 +842,97 @@
       <p class="section-sub">Open to internships, collaborations, and exciting opportunities. Let's build something great together!</p>
     </div>
 
-    <div class="contact-wrapper reveal">
-      <div>
-        <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-size:.95rem">
-          Whether you have a project idea, a job opportunity, or just want to say hi —
-          my inbox is always open. I'll get back to you as soon as possible!
-        </p>
-        <div class="contact-info-items">
-          <a href="mailto:pavathotakura167@gmail.com" class="contact-info-item">
-            <span class="contact-icon"><i class="fa fa-envelope"></i></span>
-            pavathotakura167@gmail.com
-          </a>
-          <a href="tel:+917730959659" class="contact-info-item">
-            <span class="contact-icon"><i class="fa fa-phone"></i></span>
-            +91 7730959659
-          </a>
-          <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="contact-info-item">
-            <span class="contact-icon"><i class="fab fa-github"></i></span>
-            github.com/pavan12-dotcom
-          </a>
-          <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="contact-info-item">
-            <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
-            linkedin.com/in/thotakura-pavan
-          </a>
-        </div>
+    <div class="contact-layout reveal">
+      <div class="contact-info">
+        <a href="mailto:pavathotakura167@gmail.com" class="contact-item">
+          <span class="contact-icon"><i class="fa fa-envelope"></i></span>
+          <div>
+            <span class="contact-item-label">Email</span>
+            <span class="contact-item-value">pavathotakura167@gmail.com</span>
+          </div>
+        </a>
+        <a href="tel:+917730959659" class="contact-item">
+          <span class="contact-icon"><i class="fa fa-phone"></i></span>
+          <div>
+            <span class="contact-item-label">Phone</span>
+            <span class="contact-item-value">+91 7730959659</span>
+          </div>
+        </a>
+        <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-icon"><i class="fab fa-github"></i></span>
+          <div>
+            <span class="contact-item-label">GitHub</span>
+            <span class="contact-item-value">github.com/pavan12-dotcom</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+          <div>
+            <span class="contact-item-label">LinkedIn</span>
+            <span class="contact-item-value">thotakura-pavan</span>
+          </div>
+        </a>
       </div>
 
       <div class="contact-form">
         <h3>Send a Message</h3>
-        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <form id="contactForm">
           <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="John Doe" required />
+            <label class="form-label" for="fname">Your Name</label>
+            <input class="form-input" type="text" id="fname" placeholder="John Doe" required/>
           </div>
           <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="john@example.com" required />
+            <label class="form-label" for="femail">Email Address</label>
+            <input class="form-input" type="email" id="femail" placeholder="john@example.com" required/>
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" placeholder="Project / Opportunity / Collaboration" />
+            <label class="form-label" for="fsubject">Subject</label>
+            <input class="form-input" type="text" id="fsubject" placeholder="Project / Opportunity / Collaboration"/>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+            <label class="form-label" for="fmessage">Message</label>
+            <textarea class="form-textarea" id="fmessage" placeholder="Tell me about your project…" required></textarea>
           </div>
           <button type="submit" class="form-submit">
             Send Message <i class="fa fa-paper-plane" style="margin-left:.4rem"></i>
           </button>
-          <div class="form-success" id="formSuccess">
-            ✓ Message sent! I'll get back to you soon.
-          </div>
+          <div class="form-success" id="formSuccess">✓ Message sent! I'll get back to you soon.</div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ───────────────── FOOTER ───────────────── -->
+<!-- ══════════════ FOOTER ══════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">TP<span>.</span></div>
-    <div class="footer-text">© 2026 Thotakura Pavan · Built with passion</div>
+    <div class="footer-copy">© 2026 Thotakura Pavan · Built with passion</div>
     <div class="footer-socials">
-      <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="footer-social">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="footer-social">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:pavathotakura167@gmail.com" class="footer-social">
-        <i class="fa fa-envelope"></i>
-      </a>
+      <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:pavathotakura167@gmail.com" class="footer-social"><i class="fa fa-envelope"></i></a>
     </div>
   </div>
 </footer>
+
+<!-- ══════════════ CERTIFICATE VIEW MODAL ══════════════ -->
+<div id="certModal" class="cv-overlay">
+  <div class="cv-card" id="cvCard" data-theme="accent">
+    <button class="cv-close-btn" onclick="closeCertView()"><i class="fa fa-times"></i></button>
+    <span class="cv-orn cv-orn-tl">✦</span>
+    <span class="cv-orn cv-orn-tr">✦</span>
+    <span class="cv-orn cv-orn-bl">✦</span>
+    <span class="cv-orn cv-orn-br">✦</span>
+    <div class="cv-top-bar"></div>
+    
+    <div class="cv-image-wrap">
+      <img id="cvRealImage" src="" alt="Scanned Certificate" onclick="openRealImageLightbox()"/>
+      <div class="cv-image-hint"><i class="fa fa-search-plus"></i> Click image to view full screen</div>
+    </div>
+
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
