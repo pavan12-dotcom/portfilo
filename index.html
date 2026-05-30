@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thotakura Pavan | Portfolio</title>
+  <meta name="description" content="Portfolio of Thotakura Pavan — ECE student passionate about full-stack development, data science, and real-time systems." />
+  <meta name="author" content="Thotakura Pavan" />
+  <meta name="keywords" content="Thotakura Pavan, ECE, Full Stack Developer, Data Science, React, Python, OpenCV, Power BI" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<!-- ───────────────── LOADER ───────────────── -->
+<div id="loader">
+  <div class="loader-initials" id="loaderInitials">TP<span>.</span></div>
+  <div class="loader-bar"><div class="loader-progress" id="loaderProgress"></div></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose"><i class="fa fa-times"></i></button>
+  <img src="" alt="Preview" id="lightboxImg" />
+</div>
+
+<!-- ───────────────── NAV ───────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">TP<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="#contact">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ───────────────── HERO ───────────────── -->
+<section id="hero">
+  <div class="dot-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge" id="heroBadge">
+      <span class="pulse-dot"></span>
+      Open to Opportunities
+    </div>
+    <h1 class="hero-name" id="heroName">
+      THOTAKURA <span class="hero-name-accent">PAVAN</span>
+    </h1>
+    <div class="hero-typed-wrap" id="heroTyped">
+      <span id="typedText"></span><span class="typed-cursor">|</span>
+    </div>
+    <p class="hero-sub" id="heroSub">
+      Electronics & Communication Engineering student passionate about full-stack development,
+      data science, analytics dashboards, and real-time computer vision systems.
+    </p>
+    <div class="hero-actions" id="heroActions">
+      <a class="btn-primary" href="#projects">
+        View Projects <i class="fa fa-arrow-right"></i>
+      </a>
+      <a class="btn-outline" href="#contact">Contact Me</a>
+      <a class="btn-outline" href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener">Resume</a>
+    </div>
+    <div class="hero-socials" id="heroSocials">
+      <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="social-link" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:pavathotakura167@gmail.com" class="social-link" title="Email">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <a href="tel:+917730959659" class="social-link" title="Phone">
+        <i class="fa fa-phone"></i>
+      </a>
+    </div>
+    <div class="hero-metrics" id="heroMetrics">
+      <div class="hero-metric">
+        <div class="hero-metric-value">8.0</div>
+        <div class="hero-metric-label">CGPA</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-value">2+</div>
+        <div class="hero-metric-label">Projects</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-value">5</div>
+        <div class="hero-metric-label">Certifications</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-value">1</div>
+        <div class="hero-metric-label">Internship</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── ABOUT ───────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="reveal">
+        <div class="section-eyebrow">Profile</div>
+        <h2 class="section-title">Engineering Mindset</h2>
+        <div class="section-divider"></div>
+        <div class="about-text">
+          <p>
+            I'm a <strong>Electronics & Communication Engineering student</strong> at
+            Narasaraopeta Engineering College, maintaining a CGPA of <strong>8.0</strong>.
+            I specialize in building full-stack web applications, real-time analytics dashboards,
+            and computer vision systems that solve real-world problems.
+          </p>
+          <p>
+            From crafting interactive React frontends to building Python-powered
+            computer vision pipelines — I love bridging the gap between hardware
+            fundamentals and modern software engineering.
+          </p>
+          <p>
+            My internship at <strong>Infosys Springboard</strong> gave me hands-on
+            experience in data analytics and Power BI visualization, building the
+            <strong>AirFly Insights</strong> airline operations analytics platform.
+          </p>
+        </div>
+        <div class="about-stat-row">
+          <div class="about-stat">
+            <div class="about-stat-number">8<span>.0</span></div>
+            <div class="about-stat-label">CGPA</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">5</div>
+            <div class="about-stat-label">Certifications</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">2<span>+</span></div>
+            <div class="about-stat-label">Projects</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cards reveal">
+        <div class="about-card">
+          <div class="about-card-icon">⚡</div>
+          <div class="about-card-title">Full Stack Dev</div>
+          <div class="about-card-desc">Building robust interfaces with React.js and server APIs with Node.js for real-time applications.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">📊</div>
+          <div class="about-card-title">Data Science</div>
+          <div class="about-card-desc">Creating analytics dashboards, data visualization, and insights using Power BI and Python.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">👁️</div>
+          <div class="about-card-title">Computer Vision</div>
+          <div class="about-card-desc">Real-time motion tracking and object detection systems using Python and OpenCV.</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🧩</div>
+          <div class="about-card-title">Problem Solving</div>
+          <div class="about-card-desc">Applying OOP, API integration, and debugging expertise to build production-ready solutions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── SKILLS ───────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Capabilities</div>
+      <h2 class="section-title">Technical Arsenal</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">A curated stack of languages, frameworks, and tools used to build real-world applications.</p>
+    </div>
+    <div class="skills-grid" id="skillsGrid">
+      <div class="skill-card"><div class="skill-icon" style="color:#a8b4c0">🇨</div><span class="skill-name">C</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#6d9eeb">🔷</div><span class="skill-name">C++</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#3776ab"><i class="fab fa-python" style="font-size:2rem"></i></div><span class="skill-name">Python</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#f7df1e"><i class="fab fa-js" style="font-size:2rem"></i></div><span class="skill-name">JavaScript</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#61dafb"><i class="fab fa-react" style="font-size:2rem"></i></div><span class="skill-name">React.js</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#339933"><i class="fab fa-node-js" style="font-size:2rem"></i></div><span class="skill-name">Node.js</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#e34f26"><i class="fab fa-html5" style="font-size:2rem"></i></div><span class="skill-name">HTML5</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#264de4"><i class="fab fa-css3-alt" style="font-size:2rem"></i></div><span class="skill-name">CSS3</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#f05032"><i class="fab fa-git-alt" style="font-size:2rem"></i></div><span class="skill-name">Git</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#181717"><i class="fab fa-github" style="font-size:2rem"></i></div><span class="skill-name">GitHub</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#48a3c8">👁</div><span class="skill-name">OpenCV</span></div>
+      <div class="skill-card"><div class="skill-icon" style="color:#f2c811">📊</div><span class="skill-name">Power BI</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── PROJECTS ───────────────── -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Selected Works</div>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="projects-stack">
+
+      <!-- PROJECT 1 -->
+      <div class="project-item reveal">
+        <div>
+          <div class="project-number">01</div>
+          <div class="project-tags" style="margin-top:.5rem">
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">REST APIs</span>
+            <span class="project-tag">Live Data</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="project-title">Stock Market Analytics Dashboard</h3>
+          <p class="project-desc">
+            A full-featured Stock Analytics Terminal (v3.0) tracking 19 US Equities with
+            SPY Benchmark. Features Overview, Risk Analytics, Portfolio Optimization, and
+            Monte Carlo simulation tabs. Includes MA50/MA200 overlays, Sharpe ratio, VaR,
+            Max Drawdown, CAGR metrics, and real-time portfolio allocation with strategy comparison.
+          </p>
+          <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-1.png')">
+            <img src="assets/stock-dashboard-1.png" alt="Stock Analytics Terminal - Portfolio View"
+              onerror="this.parentElement.style.display='none'" />
+          </div>
+          <div class="project-preview" style="margin-top:.75rem" onclick="openLightbox('assets/stock-dashboard-2.png')">
+            <img src="assets/stock-dashboard-2.png" alt="Stock Analytics Terminal - Overview"
+              onerror="this.parentElement.style.display='none'" />
+          </div>
+        </div>
+        <div class="project-actions">
+          <a href="https://pavan12-dotcom.github.io/Stock-market-analytics-project/Stock_Live_Dashboard.html"
+            target="_blank" rel="noopener" class="proj-btn-primary">
+            <i class="fa fa-external-link-alt"></i> Live Demo
+          </a>
+          <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="proj-btn-secondary">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-item reveal">
+        <div>
+          <div class="project-number">02</div>
+          <div class="project-tags" style="margin-top:.5rem">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">OpenCV</span>
+            <span class="project-tag">Computer Vision</span>
+            <span class="project-tag">Real-Time</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="project-title">Real-Time Motion Tracking & Object Detection</h3>
+          <p class="project-desc">
+            Built a real-time motion tracking and object detection system using Python and OpenCV.
+            Features include background subtraction, contour-based motion analysis, bounding box
+            detection, live camera feed processing, and frame-by-frame object tracking — all
+            running at real-time speeds.
+          </p>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="proj-btn-primary">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── EXPERIENCE ───────────────── -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Trajectory</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="exp-timeline reveal">
+
+      <div class="exp-item">
+        <div class="exp-dot"></div>
+        <div class="glass-card">
+          <div class="exp-card-top">
+            <div>
+              <div class="exp-company">Infosys Springboard</div>
+              <div class="exp-role">Virtual Intern — Data Analytics</div>
+              <span class="exp-badge">✓ Certified</span>
+            </div>
+            <span class="exp-date">Feb 2026</span>
+          </div>
+          <p class="exp-desc">
+            Worked on <strong style="color:var(--text)">AirFly Insights: Data Visualization and Analysis of Airline Operations</strong> —
+            an interactive Power BI analytics platform covering 5.82M flights. Built dashboards for
+            departure delay analysis by airline, monthly traffic trends, cancellation reason breakdown,
+            and route-to-destination airport visualization.
+          </p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Power BI</span>
+            <span class="exp-highlight">Data Analytics</span>
+            <span class="exp-highlight">Dashboard Design</span>
+            <span class="exp-highlight">5.82M Flights Dataset</span>
+            <span class="exp-highlight">Airline Operations</span>
+          </div>
+          <div class="exp-img-preview" onclick="openLightbox('assets/airfly-dashboard.png')">
+            <img src="assets/airfly-dashboard.png" alt="AirFly Insights Dashboard"
+              onerror="this.parentElement.style.display='none'" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── CERTIFICATIONS ───────────────── -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Credentials</div>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="certs-grid">
+
+      <div class="cert-card reveal">
+        <div class="cert-icon">🏛️</div>
+        <div>
+          <div class="cert-title">Industry 4.0 and IIoT</div>
+          <div class="cert-issuer">NPTEL · IIT Kharagpur</div>
+          <div class="cert-date">Verified Certificate</div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="flex-direction:column;align-items:stretch">
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div class="cert-icon">📊</div>
+          <div>
+            <div class="cert-title">TechA Data Analytics using Power BI Foundation</div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-date">December 17, 2025</div>
+          </div>
+        </div>
+        <div class="cert-img-wrap" style="margin-top:1rem" onclick="openLightbox('assets/infosys-cert.png')">
+          <img src="assets/infosys-cert.png" alt="Infosys Springboard Certificate"
+            onerror="this.parentElement.style.display='none'" />
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-icon">🐍</div>
+        <div>
+          <div class="cert-title">Big Data using Python</div>
+          <div class="cert-issuer">Certification</div>
+          <div class="cert-date">Verified Certificate</div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-icon">🗄️</div>
+        <div>
+          <div class="cert-title">Multidimensional Data Modelling</div>
+          <div class="cert-issuer">Certification</div>
+          <div class="cert-date">Verified Certificate</div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal">
+        <div class="cert-icon">🤖</div>
+        <div>
+          <div class="cert-title">Data Science</div>
+          <div class="cert-issuer">Certification</div>
+          <div class="cert-date">Verified Certificate</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── EDUCATION ───────────────── -->
+<section id="education">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Academic Background</div>
+      <h2 class="section-title">Education</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div>
+        <div class="edu-degree">Bachelor of Technology</div>
+        <div class="edu-field">Electronics and Communication Engineering</div>
+        <div class="edu-college">Narasaraopeta Engineering College</div>
+        <div class="edu-year">2023 — 2027</div>
+      </div>
+      <div>
+        <div class="edu-cgpa-value">8.0</div>
+        <div class="edu-cgpa-label">CGPA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── CONTACT ───────────────── -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal section-header">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Contact Me</h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Open to internships, collaborations, and exciting opportunities. Let's build something great together!</p>
+    </div>
+
+    <div class="contact-wrapper reveal">
+      <div>
+        <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;font-size:.95rem">
+          Whether you have a project idea, a job opportunity, or just want to say hi —
+          my inbox is always open. I'll get back to you as soon as possible!
+        </p>
+        <div class="contact-info-items">
+          <a href="mailto:pavathotakura167@gmail.com" class="contact-info-item">
+            <span class="contact-icon"><i class="fa fa-envelope"></i></span>
+            pavathotakura167@gmail.com
+          </a>
+          <a href="tel:+917730959659" class="contact-info-item">
+            <span class="contact-icon"><i class="fa fa-phone"></i></span>
+            +91 7730959659
+          </a>
+          <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="contact-info-item">
+            <span class="contact-icon"><i class="fab fa-github"></i></span>
+            github.com/pavan12-dotcom
+          </a>
+          <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="contact-info-item">
+            <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+            linkedin.com/in/thotakura-pavan
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="Project / Opportunity / Collaboration" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            Send Message <i class="fa fa-paper-plane" style="margin-left:.4rem"></i>
+          </button>
+          <div class="form-success" id="formSuccess">
+            ✓ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────── FOOTER ───────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">TP<span>.</span></div>
+    <div class="footer-text">© 2026 Thotakura Pavan · Built with passion</div>
+    <div class="footer-socials">
+      <a href="https://github.com/pavan12-dotcom" target="_blank" rel="noopener" class="footer-social">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/thotakura-pavan-98660b292" target="_blank" rel="noopener" class="footer-social">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:pavathotakura167@gmail.com" class="footer-social">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
