@@ -220,11 +220,11 @@ nav.scrolled{box-shadow:0 1px 20px #0000000f}
 .hero-grid{
   display:grid;
   grid-template-columns:1.15fr 0.85fr;
-  gap:4rem;
+  gap:3rem;
   width:100%;
   max-width:1100px;
   margin:0 auto;
-  align-items:center;
+  align-items:start;
   z-index:10;
 }
 .hero-info-col{
@@ -502,10 +502,10 @@ nav.scrolled{box-shadow:0 1px 20px #0000000f}
 }
 .console-body{
   padding:1.25rem 1.5rem;
-  min-height:340px;
+  min-height:280px;
   overflow-x:auto;
   overflow-y:auto;
-  max-height:380px;
+  max-height:460px;
 }
 .console-body::-webkit-scrollbar{width:3px;height:3px}
 .console-body::-webkit-scrollbar-track{background:transparent}
