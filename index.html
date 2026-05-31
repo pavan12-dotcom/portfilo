@@ -58,7 +58,7 @@
       </h1>
 
       <div class="prompt-tagline" id="heroSubPrompt">
-        &gt; Full-Stack with Data Analytics
+        &gt; <span id="typedText"></span><span class="typed-cursor">|</span>
       </div>
 
       <p class="hero-desc" id="heroSub">
@@ -125,7 +125,7 @@
         <div class="hero-metric-lbl">CORE PROJECTS</div>
       </div>
       <div class="hero-metric-item">
-        <div class="hero-metric-num">17</div>
+        <div class="hero-metric-num">20</div>
         <div class="hero-metric-lbl">VERIFIED CERTS</div>
       </div>
       <div class="hero-metric-item">
@@ -157,7 +157,7 @@
             <div class="about-stat-label">CGPA</div>
           </div>
           <div class="about-stat">
-            <div class="about-stat-number">17</div>
+            <div class="about-stat-number">20</div>
             <div class="about-stat-label">Certs</div>
           </div>
           <div class="about-stat">
@@ -358,7 +358,7 @@
               <div class="exp-role">Virtual Intern — Data Analytics</div>
               <span class="exp-featured-badge">Featured</span>
             </div>
-            <span class="exp-date">Feb 2026</span>
+            <span class="exp-date">Feb – Apr 2026</span>
           </div>
           <p class="exp-desc">
             <strong>Developed</strong> the <strong>AirFly Insights</strong> interactive Power BI analytics dashboard tracking a massive dataset of 5.82M flights.
@@ -372,9 +372,14 @@
             <span class="exp-highlight">5.82M Flights Dataset</span>
             <span class="exp-highlight">Airline Operations</span>
           </div>
-          <div class="exp-img-preview" onclick="openLightbox('assets/airfly-dashboard.png')">
-            <img src="assets/airfly-dashboard.png" alt="AirFly Insights Power BI Dashboard"
-              onerror="this.parentElement.style.display='none'"/>
+          <div class="project-actions" style="margin-top: 1.25rem;">
+            <a href="https://github.com/springboardmentor27300a/AirFly-Insights-Data-Visualization-and-Analysis-of-Airline-Operations-Batch-13---1-/tree/main/Student%20Submissions/THOTAKURA%20PAVAN"
+              target="_blank" rel="noopener" class="proj-btn-primary">
+              <i class="fab fa-github"></i> View Submission
+            </a>
+            <a href="#" onclick="event.preventDefault(); openCertView('infosys_internship')" class="proj-btn-secondary">
+              <i class="fa fa-certificate"></i> View Certificate
+            </a>
           </div>
         </div>
       </div>
@@ -416,14 +421,6 @@
           <strong>Executed</strong> a 200-path Monte Carlo simulation using Geometric Brownian Motion to forecast 30-day price distributions with CAGR of +21.1% and Max Drawdown of -21.3%.
           <strong>Integrated</strong> Alpha Vantage live API with cached local fallback, enabling real-time portfolio weight allocation via interactive sliders (Max Sharpe strategy: +27.4%).
         </p>
-        <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-1.png')">
-          <img src="assets/stock-dashboard-1.png" alt="Stock Analytics Terminal - Portfolio View"
-            onerror="this.parentElement.style.display='none'"/>
-        </div>
-        <div class="project-preview" onclick="openLightbox('assets/stock-dashboard-2.png')">
-          <img src="assets/stock-dashboard-2.png" alt="Stock Analytics Terminal - Overview"
-            onerror="this.parentElement.style.display='none'"/>
-        </div>
         <div class="project-actions">
           <a href="https://pavan12-dotcom.github.io/Stock-market-analytics-project/Stock_Live_Dashboard.html"
             target="_blank" rel="noopener" class="proj-btn-primary">
@@ -532,6 +529,93 @@
         <div class="cert-footer-row">
           <span class="cert-badge">Elite · Verified</span>
           <span class="cert-issuer-tag">Skill India · SWAYAM</span>
+        </div>
+      </div>
+
+      <!-- Infosys Springboard Internship 6.0 Certificate (2026) -->
+      <div class="cert-card featured reveal" onclick="openCertView('infosys_internship')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Infosys Springboard</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;"><i class="fa fa-briefcase"></i> INTERNSHIP</div>
+          </div>
+          <div class="cert-grade-tag">Batch 13</div>
+        </div>
+        <div class="cert-name">Internship 6.0: Data Visualization and Analysis of Airline Operations (AirFly Insights)</div>
+        <div class="cert-sub">Feb 5, 2026 – Apr 5, 2026 &nbsp;·&nbsp; 8-week virtual internship &nbsp;·&nbsp; Infosys Springboard</div>
+        <div class="cert-score-row">
+          <div class="cert-score-item">
+            <span class="cert-score-label">Assignment</span>
+            <span class="cert-score-val">Completed</span>
+          </div>
+          <div class="cert-score-item">
+            <span class="cert-score-label">Project</span>
+            <span class="cert-score-val">AirFly Insights</span>
+          </div>
+        </div>
+        <div class="cert-roll">ID: 23471A04AY THOTAKURA PAVAN</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Internship · Completed</span>
+          <span class="cert-issuer-tag">Infosys · Springboard</span>
+        </div>
+      </div>
+
+      <!-- Deloitte - Data Analytics Job Simulation (2026) -->
+      <div class="cert-card featured reveal" onclick="openCertView('deloitte_data')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Deloitte · Forage</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#00a82d,#00701a);color:#fff;"><i class="fa fa-graduation-cap"></i> SIMULATION</div>
+          </div>
+          <div class="cert-grade-tag">Data Analytics</div>
+        </div>
+        <div class="cert-name">Data Analytics Job Simulation</div>
+        <div class="cert-sub">March 2, 2026 &nbsp;·&nbsp; Job Simulation &nbsp;·&nbsp; Deloitte</div>
+        <div class="cert-score-row">
+          <div class="cert-score-item">
+            <span class="cert-score-label">Domain</span>
+            <span class="cert-score-val">Data Analysis</span>
+          </div>
+          <div class="cert-score-item">
+            <span class="cert-score-label">Subdomain</span>
+            <span class="cert-score-val">Forensic Tech</span>
+          </div>
+        </div>
+        <div class="cert-roll">Verification Code: iGSFqRa4Sk9Y4wCbB</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Forage</span>
+          <span class="cert-issuer-tag">Deloitte · Data Simulation</span>
+        </div>
+      </div>
+
+      <!-- Quantium - Data Analytics Job Simulation (2026) -->
+      <div class="cert-card featured reveal" onclick="openCertView('quantium_data')" title="Click to view certificate">
+        <div class="cert-click-hint"><i class="fa fa-expand-alt"></i> View</div>
+        <div class="cert-header-row">
+          <div>
+            <div class="cert-issuer">Quantium · Forage</div>
+            <div class="cert-grade-tag" style="background:linear-gradient(135deg,#0052cc,#0747a6);color:#fff;"><i class="fa fa-graduation-cap"></i> SIMULATION</div>
+          </div>
+          <div class="cert-grade-tag">Data Analytics</div>
+        </div>
+        <div class="cert-name">Data Analytics Job Simulation</div>
+        <div class="cert-sub">March 3, 2026 &nbsp;·&nbsp; Job Simulation &nbsp;·&nbsp; Quantium</div>
+        <div class="cert-score-row">
+          <div class="cert-score-item">
+            <span class="cert-score-label">Domain</span>
+            <span class="cert-score-val">Data Prep</span>
+          </div>
+          <div class="cert-score-item">
+            <span class="cert-score-label">Subdomain</span>
+            <span class="cert-score-val">Uplift Testing</span>
+          </div>
+        </div>
+        <div class="cert-roll">Verification Code: 3L3w57q7zpdvgSvRX</div>
+        <div class="cert-footer-row">
+          <span class="cert-badge">Completed · Forage</span>
+          <span class="cert-issuer-tag">Quantium · Analytics</span>
         </div>
       </div>
 
@@ -934,6 +1018,6 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script src="script.js?v=3.0"></script>
 </body>
 </html>

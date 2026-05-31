@@ -63,6 +63,46 @@ function initHero(){
       if(el){ el.classList.add('show'); }
     }, delay);
   });
+
+  // Start typewriter after the prompt fades in
+  setTimeout(startTypewriter, 600);
+}
+
+/* ─── TYPEWRITER ─── */
+function startTypewriter(){
+  const roles = [
+    'Full-Stack Developer',
+    'Data Analytics'
+  ];
+  const el = document.getElementById('typedText');
+  if(!el) return;
+
+  let roleIndex = 0, charIndex = 0, deleting = false;
+
+  function tick(){
+    const current = roles[roleIndex];
+    if(!deleting){
+      el.textContent = current.slice(0, charIndex + 1);
+      charIndex++;
+      if(charIndex === current.length){
+        // Finished typing — pause then start deleting
+        setTimeout(()=>{ deleting = true; tick(); }, 1800);
+        return;
+      }
+      setTimeout(tick, 75);
+    } else {
+      el.textContent = current.slice(0, charIndex - 1);
+      charIndex--;
+      if(charIndex === 0){
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(tick, 350);
+        return;
+      }
+      setTimeout(tick, 40);
+    }
+  }
+  tick();
 }
 
 /* ─── INTERACTIVE CONSOLE ─── */
@@ -117,7 +157,7 @@ function initConsole(){
 <span class="code-json-key">domain</span>     = <span class="code-value">Internet of Things</span>
 
 <span class="code-keyword">[certifications]</span>
-<span class="code-json-key">count</span>      = <span class="code-json-number">17</span>
+<span class="code-json-key">count</span>      = <span class="code-json-number">20</span>
 <span class="code-json-key">latest</span>     = <span class="code-value">Industry 4.0 & IIoT (Elite)</span>
 <span class="code-json-key">issuer</span>     = <span class="code-value">NPTEL (IIT KGP), Infosys, UNICEF</span>
 <span class="code-json-key">score</span>      = <span class="code-json-number">80% Elite</span>`
@@ -300,6 +340,66 @@ const certDB = {
       { icon: 'fa-globe',      text: 'skills.myp2e.org' }
     ],
     realImage: 'assets/cert_unicef.jpg'
+  },
+  infosys_internship: {
+    theme: 'accent',
+    issuer: 'Infosys Springboard',
+    issuerSub: 'Internship 6.0 (B 13) AirFly Insights: Data Visualization and Analysis of Airline Operations',
+    sealIcon: 'fa-briefcase',
+    certType: 'Certificate of Completion',
+    recipient: '23471A04AY THOTAKURA PAVAN',
+    desc: 'for actively participating and completing the mandatory assignment related to Internship 6.0 (B 13) AirFly Insights: Data Visualization and Analysis of Airline Operations',
+    course: 'Data Visualization and Analysis of Airline Operations',
+    date: 'February 5, 2026 – April 5, 2026',
+    dateLbl: 'Internship Period',
+    badge: '✓ Internship · Completed',
+    authority: 'Satheesha B. Nanjappa',
+    authorityRole: 'SVP & Head — Education, Training & Assessment, Infosys',
+    verify: [
+      { icon: 'fa-id-card',    text: 'Student Submission Verified' },
+      { icon: 'fa-globe',      text: 'verify.onwingspan.com' }
+    ],
+    realImage: 'assets/cert_infosys_internship.jpg'
+  },
+  deloitte_data: {
+    theme: 'orange',
+    issuer: 'Deloitte · Forage',
+    issuerSub: 'Data Analytics Job Simulation',
+    sealIcon: 'fa-graduation-cap',
+    certType: 'Certificate of Completion',
+    recipient: 'PAVAN T',
+    desc: 'for completing practical tasks in Data analysis and Forensic technology',
+    course: 'Deloitte Data Analytics Job Simulation',
+    date: 'March 2, 2026',
+    dateLbl: 'Date of Issue',
+    badge: '✓ Completed · Forage',
+    authority: 'Tina McCreery',
+    authorityRole: 'Chief Human Resources Officer, Deloitte',
+    verify: [
+      { icon: 'fa-id-card',    text: 'iGSFqRa4Sk9Y4wCbB' },
+      { icon: 'fa-globe',      text: 'Issued by Forage' }
+    ],
+    realImage: 'assets/cert_deloitte_data.jpg'
+  },
+  quantium_data: {
+    theme: 'accent',
+    issuer: 'Quantium · Forage',
+    issuerSub: 'Data Analytics Job Simulation',
+    sealIcon: 'fa-graduation-cap',
+    certType: 'Certificate of Completion',
+    recipient: 'PAVAN T',
+    desc: 'for completing practical tasks in Data preparation and customer analytics, Experimentation and uplift testing, and Analytics and commercial application',
+    course: 'Quantium Data Analytics Job Simulation',
+    date: 'March 3, 2026',
+    dateLbl: 'Date of Issue',
+    badge: '✓ Completed · Forage',
+    authority: 'Lauren Hammacher / Tom Brunskill',
+    authorityRole: 'Executive Manager, Quantium / Co-Founder, Forage',
+    verify: [
+      { icon: 'fa-id-card',    text: '3L3w57q7zpdvgSvRX' },
+      { icon: 'fa-globe',      text: 'Issued by Forage' }
+    ],
+    realImage: 'assets/cert_quantium_data.png'
   },
   infosys: {
     theme: 'accent',
