@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pavan-thoakura-portfilo.vercel.app/sitemap.xml
