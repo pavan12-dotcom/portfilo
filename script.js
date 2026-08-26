@@ -239,9 +239,9 @@ function closeLightbox(){
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
 
 /* ─── CONTACT FORM ─── */
-document.getElementById('contactForm').addEventListener('submit', function(e){
+document.getElementById('contactForm').addEventListener('submit', async function(e){
   e.preventDefault();
-  const btn = this.querySelector('.form-submit');
+  const btn   = this.querySelector('.form-submit');
   const success = document.getElementById('formSuccess');
 
   const name    = (document.getElementById('fname').value    || '').trim();
@@ -249,30 +249,47 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   const subject = (document.getElementById('fsubject').value || '').trim() || 'Portfolio Contact';
   const message = (document.getElementById('fmessage').value || '').trim();
 
-  const body = encodeURIComponent(
-    `Hi Pavan,\n\nMy name is ${name} (${email}).\n\n${message}\n\n— Sent via your portfolio`
-  );
-  const mailtoUrl = `mailto:pavathotakura167@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-  btn.textContent = 'Opening Email…';
+  btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Open the user's default email client
-  window.location.href = mailtoUrl;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: '998649c3-7fc3-47b1-97a1-cf2ba9256083',
+        from_name: name,
+        email: email,
+        subject: subject,
+        message: message
+      })
+    });
 
-  setTimeout(()=>{
-    btn.style.display = 'none';
-    success.textContent = '✓ Your email client opened! Hit Send to reach Pavan.';
-    success.style.display = 'block';
-    this.reset();
-    // Allow re-submitting after 5 seconds
+    const data = await res.json();
+
+    if (data.success) {
+      btn.style.display = 'none';
+      success.textContent = "✓ Message sent! I'll get back to you soon.";
+      success.style.display = 'block';
+      this.reset();
+      setTimeout(()=>{
+        success.style.display = 'none';
+        btn.style.display     = '';
+        btn.textContent       = 'Send Message';
+        btn.disabled          = false;
+      }, 5000);
+    } else {
+      throw new Error(data.message || 'Submission failed');
+    }
+
+  } catch(err) {
+    console.error('Form error:', err);
+    btn.textContent = 'Failed – try again';
+    btn.disabled    = false;
     setTimeout(()=>{
-      success.style.display = 'none';
-      btn.style.display = '';
-      btn.textContent = 'Send Message ✈';
-      btn.disabled = false;
-    }, 5000);
-  }, 800);
+      btn.textContent = 'Send Message';
+    }, 3000);
+  }
 });
 
 /* ─── SMOOTH SCROLL ─── */
