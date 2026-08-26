@@ -243,13 +243,36 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   e.preventDefault();
   const btn = this.querySelector('.form-submit');
   const success = document.getElementById('formSuccess');
-  btn.textContent = 'Sending…';
+
+  const name    = (document.getElementById('fname').value    || '').trim();
+  const email   = (document.getElementById('femail').value   || '').trim();
+  const subject = (document.getElementById('fsubject').value || '').trim() || 'Portfolio Contact';
+  const message = (document.getElementById('fmessage').value || '').trim();
+
+  const body = encodeURIComponent(
+    `Hi Pavan,\n\nMy name is ${name} (${email}).\n\n${message}\n\n— Sent via your portfolio`
+  );
+  const mailtoUrl = `mailto:pavathotakura167@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+  btn.textContent = 'Opening Email…';
   btn.disabled = true;
+
+  // Open the user's default email client
+  window.location.href = mailtoUrl;
+
   setTimeout(()=>{
     btn.style.display = 'none';
+    success.textContent = '✓ Your email client opened! Hit Send to reach Pavan.';
     success.style.display = 'block';
     this.reset();
-  }, 1200);
+    // Allow re-submitting after 5 seconds
+    setTimeout(()=>{
+      success.style.display = 'none';
+      btn.style.display = '';
+      btn.textContent = 'Send Message ✈';
+      btn.disabled = false;
+    }, 5000);
+  }, 800);
 });
 
 /* ─── SMOOTH SCROLL ─── */
